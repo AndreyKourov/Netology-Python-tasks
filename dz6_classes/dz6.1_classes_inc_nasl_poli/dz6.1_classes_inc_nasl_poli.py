@@ -10,14 +10,17 @@ class Pet:
 # for key_pet, val_pet in Pet.__dict__.items():
 list_pet = ['Grey', 'Horns', 'Curly']
 animal_pet = ''
+pet_dict = {}
 # oop = []
 
 for parent_list_pet in list_pet:
-    animal_pet = Pet(parent_list_pet, 10, 'Noize')
+    # animal_pet = Pet(parent_list_pet, 10, 'Noize')
     # oop = [Pet(parent_list_pet, 10, 'Noize')]
     print(animal_pet.__dict__)
 
-print(animal_pet)
+# print(pet_dict['Grey'])
+
+# print(animal_pet)
 
 # oop[0].name = 'EEE'
 # print(oop[0].name)
