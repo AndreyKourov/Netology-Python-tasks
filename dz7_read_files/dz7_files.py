@@ -153,6 +153,66 @@ def cook_book(one_book, two_book, three_book, four_book):
         name_potato : list_potato,
         name_fahitos: list_fahitos
     }
-    print(cook_book)
+    # print(cook_book)
+    return cook_book
 
 cook_book(omelet(data), duck(data), baked_potato(data), fahitos(data))
+
+def get_shop_list_by_dishes(dishes, person_count):
+    for key_dishes, val_dishes in dishes.items():
+        # print(val_dishes['ingredient_name'])
+        for list_dishes in val_dishes:
+            dict_get_dishes = {
+                list_dishes['ingredient_name'] : {
+                    'measure':list_dishes['measure'], 'quantity':list_dishes['quantity'] * person_count
+                }
+            }
+            # print(dict_get_dishes)
+    # print(person_count)
+
+get_shop_list_by_dishes(fahitos(data), 2)
+
+
+
+with open('1.txt', 'r') as f1:
+    data1 = f1.readlines()
+
+with open('2.txt', 'r') as f2:
+    data2 = f2.readlines()
+
+with open('3.txt', 'r') as f3:
+    data3 = f3.readlines()
+
+def mergin_files(f1, f2, f3):
+    list = [len(f1), len(f2), len(f3)]
+    dict_f = {'8':'1.txt', '1':'2.txt', '9':'3.txt'}
+    dict_list = {len(f1) : f1, len(f2) : f2, len(f3) : f3}
+
+    for key, val in dict_list.items():
+        if key == min(list):
+            for key_min, val_min in dict_f.items():
+                if int(key_min) == key:
+                    print(val_min)
+            print(key)
+            for val_min in val:
+                print(val_min)
+
+    for key, val in dict_list.items():
+        if min(list) < key < max(list):
+            for key_midl, val_midl in dict_f.items():
+                if int(key_midl) == key:
+                    print(val_midl)
+            print(key)
+            for val_midl in val:
+                print(val_midl)
+
+    for key, val in dict_list.items():
+        if key == max(list):
+            for key_max, val_max in dict_f.items():
+                if int(key_max) == key:
+                    print(val_max)
+            print(key)
+            for val_max in val:
+                print(val_max)
+
+mergin_files(data1, data2, data3)
